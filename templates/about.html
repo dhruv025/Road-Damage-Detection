@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO-Object Detection</title>
+	<link rel="stylesheet" type="text/css" href="../static/index.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+	<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../static/index.js"></script>
+    <style>
+      img {
+        margin: 0px 100px;
+      }
+
+        a {
+          text-decoration: none;
+          color: aliceblue;
+        }
+        a:hover {
+      color:crimson;
+      text-decoration: none;
+    }
+    #footer {
+  position:absolute;
+  top: 1300px;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+  background:#6cf;
+}
+      </style>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="collapse" id="navbarToggleExternalContent">
+              <div class="bg-dark p-4">
+                <h5 class="text-white h4"> <a href="./">Home</a></h5>
+                <h5 class="text-white h4"> <a href="./about">  About </a></h5>
+                <h5 class="text-white h4"> <a href="./contact"> Contact Us </a></h5>
+                <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
+              </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </nav>
+          </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+        <h1 style="font-weight: 600">ABOUT</h1>
+        <br>
+        <p style="font-size:larger;"> 
+            The idea behind this website is to help people so that they never suffer accidents due to potholes.
+            Whenever a person will see a pothole on the road, he/she can upload the image and our Deep Learning 
+            model will detect the potholes on it and if there is pothole on the road then the image can be send 
+            to State Public Works Department (PWD) so that they can repair potholes the road and avoid accidents.
+        </p>
+        <br>
+        <h3 style="font-weight: 600;">YOLO ALGORITHM</h3>
+        <p style="font-size:larger;"> We present YOLO(You Look Only Once), an object detection algorithm.
+            Prior work on object detection repurposes classifiers to perform detection.Our unified architecture 
+            is extremely fast. Our base YOLO model processes images in real-time at 45 frames per second. 
+            A smaller version of the network, Fast YOLO, processes an astounding 155 frames per second while
+            still achieving double the mAP of other real-time detectors. Finally, YOLO learns very general 
+            representations of objects. It outperforms other detection methods, including DPM and R-CNN, 
+            when generalizing from natural images to other domains like artwork.
+        </p>
+        <br>
+        <h3 style="font-weight: 600;">APPLICATIONS</h3>
+        <p>
+            <li style="font-size:larger;">For Detecting the Damaged Road - The road condition is totally unmotorable 
+                after the rain.The innumerable potholes on the road stretches hardly leave any space for manoeuvring.
+                Apart from the physical discomfort to drivers, vehicles also take a beating. 
+                Due to which an accident appears imminent due the enforcement of the traffic diversion. 
+                We can use the Road Damage Detection and identify the Damaged Roads in an area, an inform the 
+                Municipality about the Damaged  Roads so that they can fix it as soon as possible.
+            </li>
+            <br>
+            <li style="font-size:larger;">
+                Can be used in Self-Driving Cars - A self-driving car also known as an autonomous vehicle (AV), 
+                connected and autonomous vehicle (CAV), full self-driving car or driverless car, or robo-car 
+                or robotic car,(automated vehicles and fully automated vehicles in the European Union) is a 
+                vehicle that is capable of sensing its environment and moving safely with little or no human input. 
+                Road Damage Detection can help the self-driving car to drive carefully and alert the driver 
+                about that the road is damage and depending upon the conditions driver can takethe actions immediately.
+            </li>
+            <br>
+            <li style="font-size:larger;">We can create a App which can record videos, and if it detects some potholes then it can directly send the image and location 
+                to PWD, therefore user doesn't have to expliclity take images and tell the location.  </li>
+        </p>
+        <br>
+        <div class="images">
+          <img class="img1" src="../static/image/RoadDamage5.jpg" alt="" width="400" height="350">
+          <img class="img2" src="../static/image/RoadDamage3.jpg" alt="" width="400" height="350">
+        </div>
+        <br>
+        <h3 style="font-weight: 600;">LIMITATION OF YOLO</h3>
+        <p style="font-size:larger;">YOLO imposes strong spatial constraints on bounding
+            box predictions since each grid cell only predicts two boxes
+            and can only have one class. This spatial constraint lim-
+            its the number of nearby objects that our model can pre-
+            dict. Our model struggles with small objects that appear in
+            groups, such as very small cracks on roads.</p>
+        </div>
+    </div>
+    <div id="footer" class="footer-copyright text-center text-black-50 py-3">
+        Copyright &copy;<script>
+          document.write(new Date().getFullYear());
+        </script> All rights reserved
+    </div>
+</body>
+</html>
